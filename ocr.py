@@ -31,7 +31,7 @@ def eventoFolder(values, ventana):
         f
         for f in file_list
         if os.path.isfile(os.path.join(folder, f))
-        and f.lower().endswith((".png",".gif"))
+        and f.lower().endswith((".png",".gif", ".jpg", ".bmp"))
     ]
 
     ventana["-FILE LIST-"].update(fnames)
