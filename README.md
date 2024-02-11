@@ -15,3 +15,7 @@ Tambien es conveniente disponer de un entorno de trabajo como puede ser _pipenv_
 Para la ejecución del script se puede instalar _pipenv-shebang_ para que con un solo comando se pueda cargar el entorno e iniciar la aplicación:
 
 <code>pipenv-shebang /ruta/de/el/script/ocr.py</code>
+## Instalación
+Para instalar:
+### Se copia el fichero _ocr.py_ en una carpeta que accesible desde la variable _$PATH_
+### Se instalan las depenciencias del fichero requirements.txt
