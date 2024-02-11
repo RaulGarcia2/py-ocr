@@ -76,10 +76,12 @@ tCarpeta=sg.In(carpeta, size=(25,1), enable_events=True, key="-FOLDER-")
 lFicheros = sg.Listbox(
                 values=[], enable_events=True, size=(40,20),
                 key="-FILE LIST-")
-if carpeta != '':
-    bSalvar = sg.FileSaveAs("Salvar a fichero...", initial_folder=carpeta, file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+#bSalvar = sg.FileSaveAs("Salvar a fichero...", initial_folder=carpeta, file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+#bSalvar = sg.FileSaveAs("Salvar a fichero...", file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+if carpeta == "":
+    initial_folder=os.getcwd()
 else:
-    bSalvar = sg.FileSaveAs("Salvar a fichero...", file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+    initial_folder=carpeta
 
 lista_ficheros_columna = [
         [
@@ -97,7 +99,7 @@ visor_imagen_columna = [
         [
             sg.Button("Convertir", key="-CONVERT-"), 
             sg.In("", size=(25,1), visible=False, key="-SAVETXT-", enable_events=True),
-            sg.FileSaveAs("Salvar a fichero...", file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+            sg.FileSaveAs("Salvar a fichero...", initial_folder=initial_folder, file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
             sg.Button("Salir", key="-SALIR-", enable_events=True)
             ],
         [sg.Multiline(size=(100,20), background_color="#eeeeee", key="-SALIDA-")],
@@ -127,10 +129,11 @@ while True:
         break
     if event == "-FOLDER-":
         eventoFolder(values, ventana)
+        if values["-FOLDER-"] != "":
+            ventana["-ABRESAVE-"].update(initial_folder=values["-FOLDER-"])
     elif event == "-SAVETXT-" and values["-SAVETXT-"] != "":
         contenido = values["-SALIDA-"]
         ficheroS = values["-SAVETXT-"]
-        print(ficheroS)
         if ficheroS:
             #ventana["-SAVETXT-"].update(value=ficheroS)
             salvarFicharo(contenido, ficheroS)
