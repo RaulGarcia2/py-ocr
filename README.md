@@ -7,6 +7,7 @@ Se trata de un interfaz gráfico para facilitar la ejecución del ocr _tesseract
 ## Requisitos
 Para su funcionamiento se requiere que esté instalado:
 - _python3_
+- _pip_
 - _tesseract_
 - _tesseract-data_spa_
 
@@ -18,4 +19,4 @@ Para la ejecución del script se puede instalar _pipenv-shebang_ para que con un
 ## Instalación
 Para instalar:
 1. Se copia el fichero _ocr.py_ en una carpeta que accesible desde la variable _$PATH_
-2. Se instalan las depenciencias del fichero requirements.txt
+2. Se instalan las depenciencias del fichero requirements.txt con <code>pip install -r requirements.txt</code>
