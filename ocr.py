@@ -129,8 +129,6 @@ while True:
         break
     if event == "-FOLDER-":
         eventoFolder(values, ventana)
-        if values["-FOLDER-"] != "":
-            ventana["-ABRESAVE-"].update(initial_folder=values["-FOLDER-"])
     elif event == "-SAVETXT-" and values["-SAVETXT-"] != "":
         contenido = values["-SALIDA-"]
         ficheroS = values["-SAVETXT-"]
