@@ -4,7 +4,7 @@ Interfaz gráfico para ocr
 ## Introducción
 Se trata de un interfaz gráfico para facilitar la ejecución del ocr _tesseract_ con ficheros gráficos que están almacenados en el dispositivo
 
-# Requisitos
+## Requisitos
 Para su funcionamiento se requiere que esté instalado _python3_, _tesseract_ y _tesseract-data_spa_.
 
 Tambien es conveniente disponer de un entorno de trabajo como puede ser _pipenv_ para poder instalar las dependencias independiente del resto del sistema.
