@@ -17,5 +17,5 @@ Para la ejecución del script se puede instalar _pipenv-shebang_ para que con un
 <code>pipenv-shebang /ruta/de/el/script/ocr.py</code>
 ## Instalación
 Para instalar:
-### Se copia el fichero _ocr.py_ en una carpeta que accesible desde la variable _$PATH_
-### Se instalan las depenciencias del fichero requirements.txt
+1. Se copia el fichero _ocr.py_ en una carpeta que accesible desde la variable _$PATH_
+2. Se instalan las depenciencias del fichero requirements.txt
