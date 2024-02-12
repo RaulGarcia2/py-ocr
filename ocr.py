@@ -76,8 +76,7 @@ tCarpeta=sg.In(carpeta, size=(25,1), enable_events=True, key="-FOLDER-")
 lFicheros = sg.Listbox(
                 values=[], enable_events=True, size=(40,20),
                 key="-FILE LIST-")
-#bSalvar = sg.FileSaveAs("Salvar a fichero...", initial_folder=carpeta, file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
-#bSalvar = sg.FileSaveAs("Salvar a fichero...", file_types=(('Text', '.txt'),), key="-ABRESAVE-", enable_events=True),
+
 if carpeta == "":
     initial_folder=os.getcwd()
 else:
@@ -113,7 +112,7 @@ layout = [
             ]
         ]
 
-ventana = sg.Window("Visualizador", layout)
+ventana = sg.Window("Conversor OCR", layout)
 
 if carpeta != '':
     event, values = ventana.read()
