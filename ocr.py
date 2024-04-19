@@ -41,13 +41,13 @@ def salvarFicharo(texto, nombrefichero):
     f.write(texto)
     f.close()
 
-def convertir(imagen, panel_resultado):
+def convertir(imagen, panel_resultado, idioma='spa'):
     # Implementar la lógica de conversión
     t=tempfile.NamedTemporaryFile()
     salidatmp=t.name
 
     #El comando que nos convierte el fichero a un texto en español
-    comando='/usr/bin/tesseract  -l spa "{}" {}'.format(imagen, salidatmp)
+    comando='/usr/bin/tesseract  -l {} "{}" {}'.format(idioma, imagen, salidatmp)
     os.system(comando)
 
     #El programa tesseract nos crea un fichero con extensión txt
@@ -88,7 +88,11 @@ lista_ficheros_columna = [
             tCarpeta,
             sg.FolderBrowse(button_text="Selecciona carpeta...")
             ],
-        [ lFicheros ]
+        [ lFicheros ],
+        [
+            sg.Text("Elije idioma para leer:"),
+            sg.Combo(['spa', 'eng', 'fra', 'ron', 'osd'], default_value='spa', key='-LANG-')
+        ]
         ]
 
 visor_imagen_columna = [
@@ -140,7 +144,9 @@ while True:
 
     elif event == "-CONVERT-":
         fichero = os.path.join( values["-FOLDER-"], values["-FILE LIST-"][0])
-        convertir(fichero, ventana["-SALIDA-"])
+        lenguaje = values['-LANG-']
+        #print(lenguaje)
+        convertir(fichero, ventana["-SALIDA-"], idioma=lenguaje)
     elif event == "-FILE LIST-":
         eventoFileList(values, ventana)
 
