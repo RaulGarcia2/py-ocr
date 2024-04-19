@@ -89,10 +89,7 @@ lista_ficheros_columna = [
             sg.FolderBrowse(button_text="Selecciona carpeta...")
             ],
         [ lFicheros ],
-        [
-            sg.Text("Elije idioma para leer:"),
-            sg.Combo(['spa', 'eng', 'fra', 'ron', 'osd'], default_value='spa', key='-LANG-')
-        ]
+        [ sg.Text("Elije idioma para leer:"), sg.Combo(['spa', 'eng', 'fra', 'ron', 'osd'], default_value='spa', key='-LANG-') ]
         ]
 
 visor_imagen_columna = [
